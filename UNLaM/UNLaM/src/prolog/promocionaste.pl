@@ -16,5 +16,4 @@ numero(3).
 seleccion(X,Y):-prodCart(X,Y),X<Y.
 proyeccion(X):-seleccion(X,_).
 maximo(X):-numero(X),not(proyeccion(X)).
-
 minimo(X):-numero(X),not((prodCart(X,Y),X>Y)).
