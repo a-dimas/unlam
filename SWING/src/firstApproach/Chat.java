@@ -17,11 +17,14 @@ import javax.swing.KeyStroke;
 
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class MiOtraVentana extends JFrame {
+public class Chat extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtMessage;
@@ -29,11 +32,12 @@ public class MiOtraVentana extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MiOtraVentana frame = new MiOtraVentana();
+					Chat frame = new Chat(new List());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,12 +45,24 @@ public class MiOtraVentana extends JFrame {
 			}
 		});
 	}
+	*/
+	
+	public String getTitle(List users){
+		return "Chat con " + String.join(", ", users);
+	}
 
+	public Chat(Object user) {
+		List<String> list = new ArrayList<String>();
+		list.add(user.toString());
+		new Chat(list);
+	}
+	
 	/**
 	 * Create the frame.
 	 */
-	public MiOtraVentana() {
-		setTitle("Chat");
+	public Chat(List list) {
+		
+		setTitle(getTitle(list));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
