@@ -13,7 +13,7 @@ public class AbrirChatConThread extends Thread {
 		//MainWindow m = new MainWindow();
 		//m.setVisible(true);
 		
-		SegundaVentana v = new SegundaVentana();
+		Conversation v = new Conversation();
 		v.setVisible(true);
 		
 	}

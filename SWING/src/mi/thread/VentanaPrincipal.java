@@ -9,8 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class PrimerVentana extends JFrame {
-
+public class VentanaPrincipal extends JFrame {
+	
 	/**
 	 * 
 	 */
@@ -24,7 +24,7 @@ public class PrimerVentana extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PrimerVentana frame = new PrimerVentana();
+					VentanaPrincipal frame = new VentanaPrincipal();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class PrimerVentana extends JFrame {
 	 * Create the frame.
 	 * @param titulo 
 	 */
-	public PrimerVentana() {
+	public VentanaPrincipal() {
 		setTitle("Ventana Principal del Chat"); setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); setBounds(100, 100, 450, 300); contentPane = new JPanel(); contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane); contentPane.setLayout(null);
 		
@@ -53,6 +53,7 @@ public class PrimerVentana extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			AbrirChatConThread threadChat = new AbrirChatConThread();
 			threadChat.start();
+			
 		}
 	};
 
